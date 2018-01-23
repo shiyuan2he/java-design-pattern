@@ -19,10 +19,10 @@ public class ThreadSafeDoubleCheckLocking {
         }
     }
     /**
-     * @description <p></p>
+     * @description <p>给类添加同步锁实现单例模式</p>
      * @param
-     * @return No such property: code for class: Script1
-     * @author heshiyuan 
+     * @return 唯一单例对象
+     * @author heshiyuan
      * @date 11/09/2017 9:53 AM
      * @email shiyuan4work@sina.com
      * @github https://github.com/shiyuan2he.git

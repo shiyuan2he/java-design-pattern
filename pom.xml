@@ -17,23 +17,27 @@
         <version.junit>4.12</version.junit>
         <version.slf4j>1.7.25</version.slf4j>
         <version.logback>1.2.3</version.logback>
+        <version.hsy.java>1.0</version.hsy.java>
     </properties>
-    <dependencies>
-        <!--<dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${version.slf4j}</version>
-        </dependency>-->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${version.logback}</version>
-        </dependency>
-        <!--<dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <version>${version.logback}</version>
-        </dependency>-->
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${version.logback}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${version.junit}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hsy.java</groupId>
+                <artifactId>java-thread</artifactId>
+                <version>${version.hsy.java}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 
 </project>

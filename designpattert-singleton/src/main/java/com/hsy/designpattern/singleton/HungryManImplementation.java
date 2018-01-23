@@ -2,7 +2,7 @@ package com.hsy.designpattern.singleton;
 
 /**
  * @author heshiyuan
- * @description <p></p>
+ * @description <p>恶汉模式</p>
  * @path java-design-pattern/com.hsy.designpattern.singleton
  * @date 11/09/2017 3:33 PM
  * @github http://github.com/shiyuan2he
