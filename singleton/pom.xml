@@ -10,17 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
 
-    <artifactId>designpattert-singleton</artifactId>
+    <artifactId>singleton</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-        </dependency>
         <dependency>
             <groupId>com.hsy.java</groupId>
             <artifactId>java-thread</artifactId>

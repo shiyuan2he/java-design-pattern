@@ -9,7 +9,8 @@
     <packaging>pom</packaging>
     <version>1.0</version>
     <modules>
-        <module>designpattert-singleton</module>
+        <module>singleton</module>
+        <module>adapter</module>
     </modules>
 
 
@@ -19,6 +20,7 @@
         <version.logback>1.2.3</version.logback>
         <version.hsy.java>1.0</version.hsy.java>
     </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -38,6 +40,15 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
