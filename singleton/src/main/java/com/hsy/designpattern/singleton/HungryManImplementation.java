@@ -11,8 +11,23 @@ package com.hsy.designpattern.singleton;
  * @price ¥5    微信：hewei1109
  */
 public class HungryManImplementation {
+    // 1.将构造方法私有化，不允许外界直接创建对象
     private HungryManImplementation(){}
+
+    /**
+     * 创建类的唯一实例，使用 private static final 来修饰
+     * 思考点：
+     *  1.这个实例什么时候加载？
+     *      答：java虚拟机类加载的时候自动实例化static修饰的变量
+     *  2.为什么使用private
+     *      答：不允许通过 类名.instance 方式再次实例化
+     */
     private static final HungryManImplementation instance = new HungryManImplementation();
+
+    /**
+     * 对外提供一个公共的用于获取实例的方法（public 修饰）
+     * @return 唯一实例
+     */
     public static HungryManImplementation getInstance(){
         return instance ;
     }

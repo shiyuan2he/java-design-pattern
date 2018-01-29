@@ -16,6 +16,7 @@ public final class StaticInnerClassImplementation {
 
     public static StaticInnerClassImplementation getInstance(){return HelpHolder.INSTANCE;}
 
+    // 静态内部类对外部类进行实例化
     private static class HelpHolder{
         private static final StaticInnerClassImplementation INSTANCE  = new StaticInnerClassImplementation() ;
     }

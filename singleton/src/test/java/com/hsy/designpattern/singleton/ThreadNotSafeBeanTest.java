@@ -1,9 +1,12 @@
 package com.hsy.designpattern.singleton;
 
+import com.hsy.java.java.base.utils.ConcurrentMock;
 import com.hsy.java.thread.pool.FixedThreadPool;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.concurrent.CountDownLatch;
 
 import static org.junit.Assert.*;
 
@@ -17,15 +20,21 @@ import static org.junit.Assert.*;
  * Copyright (c) 2017 shiyuan4work@sina.com All rights reserved.
  * @price ¥5    微信：hewei1109
  */
-public class ThreadNotSafeBeanTest {
+public class ThreadNotSafeBeanTest extends ConcurrentMock{
     private static final Logger _logger = LoggerFactory.getLogger(ThreadNotSafeBeanTest.class) ;
     @Test
     public void getInstance() throws Exception {
-        for (int i = 0; i < 10000; i++) {
-            FixedThreadPool.getInstince().getFixedThreadPool().submit(new Thread(() ->
-                _logger.info("{}",ThreadNotSafeBean.getInstance() == ThreadNotSafeBean.getInstance())
-            ));
-        }
+        super.execute();
+    }
+    public int getConcurrentNo(){
+        return 50;
     }
 
+    public void doMethod(){
+        _logger.info("{}",ThreadNotSafeBean.getInstance() == ThreadNotSafeBean.getInstance());
+    }
+
+    public int getSleepTime(){
+        return 0;
+    }
 }

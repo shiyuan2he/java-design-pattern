@@ -11,8 +11,10 @@ package com.hsy.designpattern.singleton;
  * @price ¥5    微信：hewei1109
  */
 public class ThreadSafeLazyLoaded {
+    // 类加载时候不实例化
     private static ThreadSafeLazyLoaded instance ;
-    public ThreadSafeLazyLoaded(){
+    // 私有化构造器，防止运行期new新的实例
+    private ThreadSafeLazyLoaded(){
         //防止反射调用
         if(null!=instance){
             throw new IllegalStateException("Already initialized!") ;
