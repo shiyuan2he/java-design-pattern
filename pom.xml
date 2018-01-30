@@ -11,8 +11,8 @@
     <modules>
         <module>singleton</module>
         <module>adapter</module>
+        <module>factory</module>
     </modules>
-
 
     <properties>
         <version.junit>4.12</version.junit>
