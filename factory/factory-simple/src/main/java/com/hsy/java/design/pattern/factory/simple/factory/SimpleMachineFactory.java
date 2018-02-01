@@ -12,7 +12,7 @@ import com.hsy.java.design.pattern.factory.simple.product.Machine;
  * Copyright (c) 2018 shiyuan4work@sina.com All rights reserved.
  * @price ¥5    微信：hewei1109
  */
-public class MachineFactory{
+public class SimpleMachineFactory {
     public static <T extends Machine> T createMachine(Class<T> c) {
         Machine machine = null ;
         try {

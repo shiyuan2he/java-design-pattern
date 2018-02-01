@@ -1,12 +1,12 @@
-package com.hsy.java.design.pattern.factory.simple;
-
-import com.hsy.java.design.pattern.factory.simple.factory.SimpleMachineFactory;
-import com.hsy.java.design.pattern.factory.simple.product.Bike;
-import com.hsy.java.design.pattern.factory.simple.product.Car;
-import com.hsy.java.design.pattern.factory.simple.product.Machine;
-import com.hsy.java.design.pattern.factory.simple.product.Truck;
+package com.hsy.java.design.pattern.factory.multi;
+import com.hsy.java.design.pattern.factory.multi.factory.BikeFactory;
+import com.hsy.java.design.pattern.factory.multi.factory.CarFactory;
+import com.hsy.java.design.pattern.factory.multi.factory.TruckFactory;
+import com.hsy.java.design.pattern.factory.multi.product.Bike;
+import com.hsy.java.design.pattern.factory.multi.product.Car;
+import com.hsy.java.design.pattern.factory.multi.product.Machine;
+import com.hsy.java.design.pattern.factory.multi.product.Truck;
 import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,16 +31,19 @@ public class ClientTest {
          * 1.客户下订单，开始造车（2辆汽车，2两卡车，2两自行车）
          */
         // 造汽车生产线
+        CarFactory carFactory = new CarFactory() ;
         for(int i=0;i<2;i++){
-            list.add(SimpleMachineFactory.createMachine(Car.class));
+            list.add(carFactory.createMaching());
         }
         // 造卡车生产线
+        TruckFactory truckFactory = new TruckFactory() ;
         for(int i=0;i<2;i++){
-            list.add(SimpleMachineFactory.createMachine(Truck.class));
+            list.add(truckFactory.createMaching());
         }
         // 造自行车生产线
+        BikeFactory bikeFactory = new BikeFactory() ;
         for(int i=0;i<2;i++){
-            list.add(SimpleMachineFactory.createMachine(Bike.class));
+            list.add(bikeFactory.createMaching());
         }
 
         //客户开始测验每辆车的性能
