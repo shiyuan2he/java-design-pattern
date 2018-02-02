@@ -1,9 +1,5 @@
 package com.hsy.java.design.pattern.factory.multi;
-
-import com.hsy.java.design.pattern.factory.multi.factory.BikeFactory;
-import com.hsy.java.design.pattern.factory.multi.factory.CarFactory;
 import com.hsy.java.design.pattern.factory.multi.factory.MultiMachineFactory;
-import com.hsy.java.design.pattern.factory.multi.factory.TruckFactory;
 import com.hsy.java.design.pattern.factory.multi.product.Car;
 import com.hsy.java.design.pattern.factory.multi.product.Machine;
 import com.hsy.java.design.pattern.factory.multi.product.Truck;
