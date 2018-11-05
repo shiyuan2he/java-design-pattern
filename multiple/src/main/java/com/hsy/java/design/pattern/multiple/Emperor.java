@@ -20,4 +20,8 @@ public class Emperor {
         Random random = new Random();
         return emperorList.get(random.nextInt(maxNumOfEmperor));
     }
+
+    public static Emperor getInstance(int index){
+        return emperorList.get(index);
+    }
 }
