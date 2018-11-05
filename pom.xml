@@ -13,13 +13,18 @@
         <module>adapter</module>
         <module>factory</module>
         <module>proxy</module>
+        <module>multiple</module>
     </modules>
 
     <properties>
+        <version.jdk>11</version.jdk>
+        <version.encoding>UTF-8</version.encoding>
         <version.junit>4.12</version.junit>
         <version.slf4j>1.7.25</version.slf4j>
         <version.logback>1.2.3</version.logback>
         <version.hsy.java>1.0</version.hsy.java>
+        <version.maven.compile>3.8.0</version.maven.compile>
+        <version.lombok>1.18.4</version.lombok>
     </properties>
 
     <dependencyManagement>
@@ -98,19 +103,43 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <version>${version.junit}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
+            <version>${version.logback}</version>
         </dependency>
         <dependency>
             <groupId>com.hsy.java</groupId>
             <artifactId>java-thread</artifactId>
+            <version>${version.hsy.java}</version>
         </dependency>
         <dependency>
             <groupId>com.hsy.java</groupId>
             <artifactId>java-base</artifactId>
+            <version>${version.hsy.java}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${version.lombok}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${version.maven.compile}</version>
+                <configuration>
+                    <source>${version.jdk}</source>
+                    <target>${version.jdk}</target>
+                    <encoding>${version.encoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
