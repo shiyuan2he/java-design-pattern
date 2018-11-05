@@ -12,8 +12,12 @@
         <module>singleton</module>
         <module>adapter</module>
         <module>factory</module>
+<<<<<<< HEAD
         <module>proxy</module>
         <module>multiple</module>
+=======
+        <module>strategy</module>
+>>>>>>> develop
     </modules>
 
     <properties>
