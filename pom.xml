@@ -12,12 +12,10 @@
         <module>singleton</module>
         <module>adapter</module>
         <module>factory</module>
-<<<<<<< HEAD
         <module>proxy</module>
         <module>multiple</module>
-=======
         <module>strategy</module>
->>>>>>> develop
+        <module>observer</module>
     </modules>
 
     <properties>
@@ -29,6 +27,7 @@
         <version.hsy.java>1.0</version.hsy.java>
         <version.maven.compile>3.8.0</version.maven.compile>
         <version.lombok>1.18.4</version.lombok>
+        <version.guava>23.0</version.guava>
     </properties>
 
     <dependencyManagement>
@@ -130,6 +129,12 @@
             <artifactId>lombok</artifactId>
             <version>${version.lombok}</version>
             <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${version.guava}</version>
         </dependency>
     </dependencies>
     <build>
