@@ -16,6 +16,7 @@
         <module>multiple</module>
         <module>strategy</module>
         <module>observer</module>
+        <module>decorator</module>
     </modules>
 
     <properties>
