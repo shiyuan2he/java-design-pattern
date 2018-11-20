@@ -15,6 +15,8 @@ import org.slf4j.LoggerFactory;
  */
 public class Bike implements Machine{
     private final Logger _logger = LoggerFactory.getLogger(this.getClass()) ;
+
+    private Bike(){}
     @Override
     public void start() {
         _logger.info("自行车启动啦");

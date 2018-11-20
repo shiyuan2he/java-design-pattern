@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Truck implements Machine{
     private final Logger _logger = LoggerFactory.getLogger(this.getClass()) ;
+    private Truck(){}
     @Override
     public void start() {
         _logger.info("卡车启动啦");
