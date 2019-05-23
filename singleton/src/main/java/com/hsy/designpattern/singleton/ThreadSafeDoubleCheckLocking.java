@@ -17,7 +17,9 @@ public class ThreadSafeDoubleCheckLocking {
      */
     private static volatile ThreadSafeDoubleCheckLocking instance ;
 
-    // 私有化构造器
+    /**
+     * 私有化构造器
+     */
     private ThreadSafeDoubleCheckLocking(){
         // 防止使用反射实例化ThreadSafeDoubleCheckLocking实例
         if(null != instance){

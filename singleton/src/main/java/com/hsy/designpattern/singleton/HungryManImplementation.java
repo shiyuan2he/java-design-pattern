@@ -11,7 +11,9 @@ package com.hsy.designpattern.singleton;
  * @price ¥5    微信：hewei1109
  */
 public class HungryManImplementation {
-    // 1.将构造方法私有化，不允许外界直接创建对象
+    /**
+     * 将构造方法私有化，不允许外界直接创建对象
+     */
     private HungryManImplementation(){}
 
     /**

@@ -11,10 +11,15 @@ package com.hsy.designpattern.singleton;
  * @price ¥5    微信：hewei1109
  */
 public class ThreadNotSafeBean {
-    // 类加载时候不实例化
+    /**
+     * 类加载时候不实例化
+     */
     private static ThreadNotSafeBean instance ;
 
-    // 第一次用到的时候实例化，懒加载，线程不安全
+    /**
+     * 第一次用到的时候实例化，懒加载，线程不安全
+     * @return
+     */
     public static ThreadNotSafeBean getInstance(){
         /**
          * 以下代码线程不安全，多线程情况下可能会new出来多个实例
