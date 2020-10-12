@@ -22,7 +22,7 @@
     <properties>
         <version.jdk>11</version.jdk>
         <version.encoding>UTF-8</version.encoding>
-        <version.junit>4.12</version.junit>
+        <version.junit>4.13.1</version.junit>
         <version.slf4j>1.7.25</version.slf4j>
         <version.logback>1.2.3</version.logback>
         <version.hsy.java>1.0</version.hsy.java>
