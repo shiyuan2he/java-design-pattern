@@ -2,7 +2,7 @@
 
 ### why
 
-如果创造出多个实例，就会导致许多问题，比如占用过多资源，不一致的结果等。只有使用单例模式，保证了整个应用中某个实例有且仅有一个。
+如果对创造出来的实例不加以控制，就会面临许多问题，比如占用过多资源，不一致的结果等。只有使用单例模式，保证了整个应用中某个实例有且仅有一个。
 
 ### 定义
 
@@ -10,22 +10,22 @@ Ensure a class has only one instance, and provide a global point of access to it
 
 ### 实现
 
-#### 饿汉模式（线程安全）
+| 类型  | 备注 |
+|---| --- |
+| [恶汉模式](#)  | （线程安全）|
+| [通用懒汉模式](#)  | （线程不安全）|
+| [懒汉模式](#)  | （线程安全）|
+| [懒汉模式变种](#)  | （线程安全）|
+| [静态内部类模式](#)  | （线程安全）|
 
-HungryManImplementation.java
 
-代码：
+#### 恶汉模式
+
+部分伪代码如下：
 
 ```java
 /**
- * @author heshiyuan
  * @description <p>恶汉模式</p>
- * @path java-design-pattern/com.hsy.designpattern.singleton
- * @date 11/09/2017 3:33 PM
- * @github http://github.com/shiyuan2he
- * @email shiyuan4work@sina.com
- * Copyright (c) 2017 shiyuan4work@sina.com All rights reserved.
- * @price ¥5    微信：hewei1109
  */
 public class HungryManImplementation {
     // 1.将构造方法私有化，不允许外界直接创建对象
@@ -47,6 +47,43 @@ public class HungryManImplementation {
      */
     public static HungryManImplementation getInstance(){
         return instance ;
+    }
+}
+```
+
+测试：
+
+测试用例伪代码
+
+```java
+public class HungryManImplementationTest{
+    @Test
+    public void newInstance(){
+        /**
+         *  private HungryManImplementation()  唯一构造器私有化，导致无法new instance
+         *  下面代码编译不通过
+         */
+//        HungryManImplementation instance = new HungryManImplementation();
+    }
+
+    @Test
+    public void cloneInstance(){
+        /**
+         * 由于克隆需要本类实现Cloneable，重写clone方法，此处无法利用clone
+         * 实现instance复制
+         */
+    }
+    
+    @Test
+    public void testHungryMan() throws Exception {
+        for (int i = 0; i < 10000; i++) {
+            new Runnable(){
+                @Override
+                public void run() {
+                    Assert.isTrue(HungryManImplementation.getInstance() == HungryManImplementation.getInstance());
+                }
+            };
+        }
     }
 }
 ```

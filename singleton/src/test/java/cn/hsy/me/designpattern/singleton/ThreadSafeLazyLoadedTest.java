@@ -1,11 +1,8 @@
-package com.hsy.designpattern.singleton;
+package cn.hsy.me.designpattern.singleton;
 
-import com.hsy.java.thread.pool.FixedThreadPool;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static org.junit.Assert.*;
 
 /**
  * @author heshiyuan
@@ -22,9 +19,9 @@ public class ThreadSafeLazyLoadedTest {
     @Test
     public void getInstance() throws Exception {
         for (int i = 0; i < 10000; i++) {
-            FixedThreadPool.getInstince().getFixedThreadPool().submit(new Thread(() ->
+          /*  FixedThreadPool.getInstince().getFixedThreadPool().submit(new Thread(() ->
                 _logger.info("{}",ThreadSafeLazyLoaded.getInstance() == ThreadSafeLazyLoaded.getInstance())
-            ));
+            ));*/
         }
     }
 

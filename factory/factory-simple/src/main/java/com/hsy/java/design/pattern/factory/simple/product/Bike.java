@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
  * Copyright (c) 2018 shiyuan4work@sina.com All rights reserved.
  * @price ¥5    微信：hewei1109
  */
-public class Bike implements Machine{
+public class Bike extends AbstractMachine implements Machine{
     private final Logger _logger = LoggerFactory.getLogger(this.getClass()) ;
     @Override
     public void start() {
@@ -23,6 +23,11 @@ public class Bike implements Machine{
     @Override
     public void speed() {
         _logger.info("自行车加速啦");
+    }
+
+    @Override
+    public void slow() {
+        _logger.info("自行车减速啦");
     }
 
     @Override

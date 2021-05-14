@@ -1,4 +1,4 @@
-package com.hsy.designpattern.singleton;
+package cn.hsy.me.designpattern.singleton;
 
 /**
  * @author heshiyuan

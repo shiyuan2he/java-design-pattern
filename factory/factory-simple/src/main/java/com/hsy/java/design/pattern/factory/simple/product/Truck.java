@@ -25,6 +25,11 @@ public class Truck implements Machine{
         _logger.info("卡车加速啦");
     }
 
+    @Override
+    public void slow() {
+        _logger.info("卡车减速啦");
+    }
+
     public void blow() {
         _logger.info("卡车按铃啦");
     }

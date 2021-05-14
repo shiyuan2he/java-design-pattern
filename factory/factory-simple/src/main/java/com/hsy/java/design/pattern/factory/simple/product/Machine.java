@@ -11,10 +11,23 @@ package com.hsy.java.design.pattern.factory.simple.product;
  * @price ¥5    微信：hewei1109
  */
 public interface Machine {
-    // 车发动起来
+    /**
+     * 车发动起来
+     */
     void start() ;
-    // 车加速度
+
+    /**
+     * 车加速度
+     */
     void speed() ;
-    // 车制动
+
+    /**
+     * 减速
+     */
+    void slow();
+
+    /**
+     * 车制动
+     */
     void stop() ;
 }

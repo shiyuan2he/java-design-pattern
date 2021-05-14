@@ -17,18 +17,21 @@
         <module>strategy</module>
         <module>observer</module>
         <module>decorator</module>
+        <module>responsibility-chain</module>
     </modules>
 
     <properties>
-        <version.jdk>11</version.jdk>
+        <maven.compiler.target>14</maven.compiler.target>
+        <maven.compiler.source>14</maven.compiler.source>
         <version.encoding>UTF-8</version.encoding>
         <version.junit>4.12</version.junit>
         <version.slf4j>1.7.25</version.slf4j>
-        <version.logback>1.2.3</version.logback>
+        <version.logback>1.3.0-alpha5</version.logback>
         <version.hsy.java>1.0</version.hsy.java>
-        <version.maven.compile>3.8.0</version.maven.compile>
+        <version.maven.compile>3.8.1</version.maven.compile>
         <version.lombok>1.18.4</version.lombok>
         <version.guava>23.0</version.guava>
+        <version.hutool>5.0.7</version.hutool>
     </properties>
 
     <dependencyManagement>
@@ -43,64 +46,6 @@
                 <artifactId>junit</artifactId>
                 <version>${version.junit}</version>
             </dependency>
-            <dependency>
-                <groupId>com.hsy.java</groupId>
-                <artifactId>java-thread</artifactId>
-                <version>${version.hsy.java}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>ch.qos.logback</groupId>
-                        <artifactId>logback-classic</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>com.hsy.java</groupId>
-                <artifactId>java-base</artifactId>
-                <version>${version.hsy.java}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>junit</groupId>
-                        <artifactId>junit</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>commons-beanutils</groupId>
-                        <artifactId>commons-beanutils</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>commons-io</groupId>
-                        <artifactId>commons-io</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.commons</groupId>
-                        <artifactId>commons-lang3</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>com.dyuproject.protostuff</groupId>
-                        <artifactId>protostuff-core</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>com.dyuproject.protostuff</groupId>
-                        <artifactId>protostuff-runtime</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.velocity</groupId>
-                        <artifactId>velocity</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>com.hsy.java</groupId>
-                        <artifactId>java-thread</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>ch.qos.logback</groupId>
-                        <artifactId>logback-classic</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>com.alibaba</groupId>
-                        <artifactId>fastjson</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -110,33 +55,32 @@
             <version>${version.junit}</version>
         </dependency>
         <dependency>
+            <groupId>cn.hsy.me.hetool</groupId>
+            <artifactId>hetool-log</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>${version.logback}</version>
         </dependency>
-        <dependency>
-            <groupId>com.hsy.java</groupId>
-            <artifactId>java-thread</artifactId>
-            <version>${version.hsy.java}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.hsy.java</groupId>
-            <artifactId>java-base</artifactId>
-            <version>${version.hsy.java}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${version.lombok}</version>
             <scope>provided</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${version.guava}</version>
         </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${version.hutool}</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
@@ -145,8 +89,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${version.maven.compile}</version>
                 <configuration>
-                    <source>${version.jdk}</source>
-                    <target>${version.jdk}</target>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                     <encoding>${version.encoding}</encoding>
                 </configuration>
             </plugin>
